@@ -1,0 +1,26 @@
+# Lookout — minimal required dependencies
+mss>=9.0.1
+Pillow>=10.0.0
+httpx>=0.27.0
+python-dotenv>=1.0.0
+
+# Local vision (default) — uses Ollama over HTTP, no SDK required
+# (you DO need Ollama installed and the vision model pulled)
+
+# Cloud vision backends (pick whichever you want to use)
+# Gemini and Ollama work out of the box via httpx - no SDK needed.
+# anthropic>=0.34.0
+# openai>=1.40.0
+
+# OCR (optional, but recommended)
+# pytesseract>=0.3.10
+
+# Mouse + keyboard control
+pyautogui>=0.9.54
+pyperclip>=1.8.2
+pynput>=1.7.7
+
+# Web UI
+fastapi>=0.110.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.0

@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lookout"
+version = "0.1.0"
+description = "Screen-aware assistant that watches your screen, answers questions, and acts on what it sees."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Lookout contributors" }]
+keywords = ["screen", "vision", "agent", "automation", "ollama", "llm"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "mss>=9.0.1",
+    "Pillow>=10.0.0",
+    "httpx>=0.27.0",
+    "pyautogui>=0.9.54",
+    "pyperclip>=1.8.2",
+    "pynput>=1.7.7",
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    "pydantic>=2.5.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+anthropic = ["anthropic>=0.34.0"]
+openai = ["openai>=1.40.0"]
+# Gemini/ollama use httpx directly - no extra SDK required.
+ocr = ["pytesseract>=0.3.10", "numpy>=1.24.0"]
+all = ["anthropic>=0.34.0", "openai>=1.40.0"]
+
+[project.scripts]
+lookout = "lookout.__main__:main"
+
+[project.urls]
+Homepage = "https://example.com/lookout"
+
+[tool.setuptools.packages.find]
+include = ["lookout*"]
+
+[tool.setuptools.package-data]
+"lookout.ui" = ["templates/*.html"]
