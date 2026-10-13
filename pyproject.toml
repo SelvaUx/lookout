@@ -40,7 +40,9 @@ all = ["anthropic>=0.34.0", "openai>=1.40.0"]
 lookout = "lookout.__main__:main"
 
 [project.urls]
-Homepage = "https://example.com/lookout"
+Homepage = "https://github.com/SelvaUx/lookout"
+Repository = "https://github.com/SelvaUx/lookout"
+Issues = "https://github.com/SelvaUx/lookout/issues"
 
 [tool.setuptools.packages.find]
 include = ["lookout*"]
